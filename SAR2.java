@@ -5,7 +5,6 @@ import javax.swing.JOptionPane;
 
 public class SAR2 extends JApplet implements ActionListener {
 
-    // private Jthis this;
     private JButton[][] buttons;
     private JLabel statusLabel;
     private JLabel top;
@@ -23,8 +22,8 @@ public class SAR2 extends JApplet implements ActionListener {
         buttons = new JButton[3][3];
         statusLabel = new JLabel();
         top = new JLabel();
-        icon1 = new ImageIcon("red.JPEG");
-        icon2 = new ImageIcon("blue.PNG");
+        icon1 = new ImageIcon("red.jpeg");
+        icon2 = new ImageIcon("blue.png");
         character = 'X';
         Dimension dimesion = new Dimension(500, 500);
         optionPane = new JOptionPane();
@@ -38,14 +37,14 @@ public class SAR2 extends JApplet implements ActionListener {
             for (int col = 0; col < 3; col++) {
                 JButton button = new JButton("");
                 button.addActionListener(this);
-                button.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
+                button.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 64));
                 buttons[rows][col] = button;
                 panel.add(button);
             }
         }
         for (int rows = 0; rows < 3; rows++) {
             for (int col = 0; col < 3; col++) {
-                buttons[rows][col].setBackground(Color.RED);
+                buttons[rows][col].setBackground(Color.WHITE);
             }
         }
         statusLabel.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 16));
@@ -221,9 +220,9 @@ public class SAR2 extends JApplet implements ActionListener {
                     || buttons[rows][col] == buttons[1][0]) && (buttons[rows][col].getText().equals(""))) {
                 return 1;
             } else {
-                buttons[0][1].setBackground(Color.RED);
-                buttons[1][1].setBackground(Color.RED);
-                buttons[1][0].setBackground(Color.RED);
+                buttons[0][1].setBackground(Color.WHITE);
+                buttons[1][1].setBackground(Color.WHITE);
+                buttons[1][0].setBackground(Color.WHITE);
 
             }
         } else if (b2 == buttons[0][1]) {
@@ -231,18 +230,18 @@ public class SAR2 extends JApplet implements ActionListener {
                     || buttons[rows][col] == buttons[0][2]) && (buttons[rows][col].getText().equals(""))) {
                 return 1;
             } else {
-                buttons[0][0].setBackground(Color.RED);
-                buttons[1][1].setBackground(Color.RED);
-                buttons[0][2].setBackground(Color.RED);
+                buttons[0][0].setBackground(Color.WHITE);
+                buttons[1][1].setBackground(Color.WHITE);
+                buttons[0][2].setBackground(Color.WHITE);
             }
         } else if (b2 == buttons[0][2]) {
             if ((buttons[rows][col] == buttons[0][1] || buttons[rows][col] == buttons[1][1]
                     || buttons[rows][col] == buttons[1][2]) && (buttons[rows][col].getText().equals(""))) {
                 return 1;
             } else {
-                buttons[0][1].setBackground(Color.RED);
-                buttons[1][1].setBackground(Color.RED);
-                buttons[1][2].setBackground(Color.RED);
+                buttons[0][1].setBackground(Color.WHITE);
+                buttons[1][1].setBackground(Color.WHITE);
+                buttons[1][2].setBackground(Color.WHITE);
 
             }
         } else if (b2 == buttons[1][0]) {
@@ -250,9 +249,9 @@ public class SAR2 extends JApplet implements ActionListener {
                     || buttons[rows][col] == buttons[2][0]) && (buttons[rows][col].getText().equals(""))) {
                 return 1;
             } else {
-                buttons[0][0].setBackground(Color.RED);
-                buttons[1][1].setBackground(Color.RED);
-                buttons[2][0].setBackground(Color.RED);
+                buttons[0][0].setBackground(Color.WHITE);
+                buttons[1][1].setBackground(Color.WHITE);
+                buttons[2][0].setBackground(Color.WHITE);
             }
         } else if (b2 == buttons[1][1]) {
             if ((buttons[rows][col] == buttons[0][0] || buttons[rows][col] == buttons[0][1]
@@ -262,14 +261,14 @@ public class SAR2 extends JApplet implements ActionListener {
                     && (buttons[rows][col].getText().equals(""))) {
                 return 1;
             } else {
-                buttons[0][0].setBackground(Color.RED);
-                buttons[0][1].setBackground(Color.RED);
-                buttons[0][2].setBackground(Color.RED);
-                buttons[1][0].setBackground(Color.RED);
-                buttons[1][2].setBackground(Color.RED);
-                buttons[2][0].setBackground(Color.RED);
-                buttons[2][1].setBackground(Color.RED);
-                buttons[2][2].setBackground(Color.RED);
+                buttons[0][0].setBackground(Color.WHITE);
+                buttons[0][1].setBackground(Color.WHITE);
+                buttons[0][2].setBackground(Color.WHITE);
+                buttons[1][0].setBackground(Color.WHITE);
+                buttons[1][2].setBackground(Color.WHITE);
+                buttons[2][0].setBackground(Color.WHITE);
+                buttons[2][1].setBackground(Color.WHITE);
+                buttons[2][2].setBackground(Color.WHITE);
 
             }
         } else if (b2 == buttons[1][2]) {
@@ -277,9 +276,9 @@ public class SAR2 extends JApplet implements ActionListener {
                     || buttons[rows][col] == buttons[2][2]) && (buttons[rows][col].getText().equals(""))) {
                 return 1;
             } else {
-                buttons[0][2].setBackground(Color.RED);
-                buttons[1][1].setBackground(Color.RED);
-                buttons[2][2].setBackground(Color.RED);
+                buttons[0][2].setBackground(Color.WHITE);
+                buttons[1][1].setBackground(Color.WHITE);
+                buttons[2][2].setBackground(Color.WHITE);
 
             }
         } else if (b2 == buttons[2][0]) {
@@ -287,9 +286,9 @@ public class SAR2 extends JApplet implements ActionListener {
                     || buttons[rows][col] == buttons[2][1]) && (buttons[rows][col].getText().equals(""))) {
                 return 1;
             } else {
-                buttons[1][0].setBackground(Color.RED);
-                buttons[1][1].setBackground(Color.RED);
-                buttons[2][1].setBackground(Color.RED);
+                buttons[1][0].setBackground(Color.WHITE);
+                buttons[1][1].setBackground(Color.WHITE);
+                buttons[2][1].setBackground(Color.WHITE);
             }
         } else if (b2 == buttons[2][1]) {
             if ((buttons[rows][col] == buttons[2][0] || buttons[rows][col] == buttons[1][1]
@@ -297,18 +296,18 @@ public class SAR2 extends JApplet implements ActionListener {
                 return 1;
             } else {
 
-                buttons[2][0].setBackground(Color.RED);
-                buttons[1][1].setBackground(Color.RED);
-                buttons[2][2].setBackground(Color.RED);
+                buttons[2][0].setBackground(Color.WHITE);
+                buttons[1][1].setBackground(Color.WHITE);
+                buttons[2][2].setBackground(Color.WHITE);
             }
         } else if (b2 == buttons[2][2]) {
             if ((buttons[rows][col] == buttons[1][2] || buttons[rows][col] == buttons[2][1]
                     || buttons[rows][col] == buttons[1][1]) && (buttons[rows][col].getText().equals(""))) {
                 return 1;
             } else {
-                buttons[1][2].setBackground(Color.RED);
-                buttons[2][1].setBackground(Color.RED);
-                buttons[1][1].setBackground(Color.RED);
+                buttons[1][2].setBackground(Color.WHITE);
+                buttons[2][1].setBackground(Color.WHITE);
+                buttons[1][1].setBackground(Color.WHITE);
             }
         }
         return 0;
@@ -367,49 +366,49 @@ public class SAR2 extends JApplet implements ActionListener {
             if (buttons[0][1].getText().equals(""))
                 buttons[0][1].setBackground(Color.BLUE);
             else
-                buttons[0][1].setBackground(Color.RED);
+                buttons[0][1].setBackground(Color.WHITE);
 
             if (buttons[1][1].getText().equals(""))
                 buttons[1][1].setBackground(Color.BLUE);
             else
-                buttons[1][1].setBackground(Color.RED);
+                buttons[1][1].setBackground(Color.WHITE);
 
             if (buttons[1][0].getText().equals(""))
                 buttons[1][0].setBackground(Color.BLUE);
             else
-                buttons[1][0].setBackground(Color.RED);
+                buttons[1][0].setBackground(Color.WHITE);
 
         } else if (b2 == buttons[0][1]) {
             if (buttons[0][0].getText().equals(""))
                 buttons[0][0].setBackground(Color.BLUE);
             else
-                buttons[0][0].setBackground(Color.RED);
+                buttons[0][0].setBackground(Color.WHITE);
 
             if (buttons[1][1].getText().equals(""))
                 buttons[1][1].setBackground(Color.BLUE);
             else
-                buttons[1][1].setBackground(Color.RED);
+                buttons[1][1].setBackground(Color.WHITE);
 
             if (buttons[0][2].getText().equals(""))
                 buttons[0][2].setBackground(Color.BLUE);
             else
-                buttons[0][2].setBackground(Color.RED);
+                buttons[0][2].setBackground(Color.WHITE);
 
         } else if (b2 == buttons[0][2]) {
             if (buttons[0][1].getText().equals(""))
                 buttons[0][1].setBackground(Color.BLUE);
             else
-                buttons[0][1].setBackground(Color.RED);
+                buttons[0][1].setBackground(Color.WHITE);
 
             if (buttons[1][1].getText().equals(""))
                 buttons[1][1].setBackground(Color.BLUE);
             else
-                buttons[1][1].setBackground(Color.RED);
+                buttons[1][1].setBackground(Color.WHITE);
 
             if (buttons[1][2].getText().equals(""))
                 buttons[1][2].setBackground(Color.BLUE);
             else
-                buttons[1][2].setBackground(Color.RED);
+                buttons[1][2].setBackground(Color.WHITE);
 
         } else if (b2 == buttons[1][0]) {
             // if(buttons[rows][col] == buttons[0][0] || buttons[rows][col] == buttons[1][1]
@@ -417,17 +416,17 @@ public class SAR2 extends JApplet implements ActionListener {
             if (buttons[0][0].getText().equals(""))
                 buttons[0][0].setBackground(Color.BLUE);
             else
-                buttons[0][0].setBackground(Color.RED);
+                buttons[0][0].setBackground(Color.WHITE);
 
             if (buttons[1][1].getText().equals(""))
                 buttons[1][1].setBackground(Color.BLUE);
             else
-                buttons[1][1].setBackground(Color.RED);
+                buttons[1][1].setBackground(Color.WHITE);
 
             if (buttons[2][0].getText().equals(""))
                 buttons[2][0].setBackground(Color.BLUE);
             else
-                buttons[2][0].setBackground(Color.RED);
+                buttons[2][0].setBackground(Color.WHITE);
 
         } else if (b2 == buttons[1][1]) {
             // if(buttons[rows][col] == buttons[0][0] || buttons[rows][col] == buttons[0][1]
@@ -438,42 +437,42 @@ public class SAR2 extends JApplet implements ActionListener {
             if (buttons[0][0].getText().equals(""))
                 buttons[0][0].setBackground(Color.BLUE);
             else
-                buttons[0][0].setBackground(Color.RED);
+                buttons[0][0].setBackground(Color.WHITE);
 
             if (buttons[0][1].getText().equals(""))
                 buttons[0][1].setBackground(Color.BLUE);
             else
-                buttons[0][1].setBackground(Color.RED);
+                buttons[0][1].setBackground(Color.WHITE);
 
             if (buttons[0][2].getText().equals(""))
                 buttons[0][2].setBackground(Color.BLUE);
             else
-                buttons[0][2].setBackground(Color.RED);
+                buttons[0][2].setBackground(Color.WHITE);
 
             if (buttons[1][0].getText().equals(""))
                 buttons[1][0].setBackground(Color.BLUE);
             else
-                buttons[1][0].setBackground(Color.RED);
+                buttons[1][0].setBackground(Color.WHITE);
 
             if (buttons[1][2].getText().equals(""))
                 buttons[1][2].setBackground(Color.BLUE);
             else
-                buttons[1][2].setBackground(Color.RED);
+                buttons[1][2].setBackground(Color.WHITE);
 
             if (buttons[2][0].getText().equals(""))
                 buttons[2][0].setBackground(Color.BLUE);
             else
-                buttons[2][0].setBackground(Color.RED);
+                buttons[2][0].setBackground(Color.WHITE);
 
             if (buttons[2][1].getText().equals(""))
                 buttons[2][1].setBackground(Color.BLUE);
             else
-                buttons[2][1].setBackground(Color.RED);
+                buttons[2][1].setBackground(Color.WHITE);
 
             if (buttons[2][2].getText().equals(""))
                 buttons[2][2].setBackground(Color.BLUE);
             else
-                buttons[2][2].setBackground(Color.RED);
+                buttons[2][2].setBackground(Color.WHITE);
 
         } else if (b2 == buttons[1][2]) {
             // if(buttons[rows][col] == buttons[0][2] || buttons[rows][col] == buttons[1][1]
@@ -481,17 +480,17 @@ public class SAR2 extends JApplet implements ActionListener {
             if (buttons[0][2].getText().equals(""))
                 buttons[0][2].setBackground(Color.BLUE);
             else
-                buttons[0][2].setBackground(Color.RED);
+                buttons[0][2].setBackground(Color.WHITE);
 
             if (buttons[1][1].getText().equals(""))
                 buttons[1][1].setBackground(Color.BLUE);
             else
-                buttons[1][1].setBackground(Color.RED);
+                buttons[1][1].setBackground(Color.WHITE);
 
             if (buttons[2][2].getText().equals(""))
                 buttons[2][2].setBackground(Color.BLUE);
             else
-                buttons[2][2].setBackground(Color.RED);
+                buttons[2][2].setBackground(Color.WHITE);
 
         } else if (b2 == buttons[2][0]) {
             // if(buttons[rows][col] == buttons[1][0] || buttons[rows][col] == buttons[1][1]
@@ -499,17 +498,17 @@ public class SAR2 extends JApplet implements ActionListener {
             if (buttons[1][0].getText().equals(""))
                 buttons[1][0].setBackground(Color.BLUE);
             else
-                buttons[1][0].setBackground(Color.RED);
+                buttons[1][0].setBackground(Color.WHITE);
 
             if (buttons[1][1].getText().equals(""))
                 buttons[1][1].setBackground(Color.BLUE);
             else
-                buttons[1][1].setBackground(Color.RED);
+                buttons[1][1].setBackground(Color.WHITE);
 
             if (buttons[2][1].getText().equals(""))
                 buttons[2][1].setBackground(Color.BLUE);
             else
-                buttons[2][1].setBackground(Color.RED);
+                buttons[2][1].setBackground(Color.WHITE);
 
         } else if (b2 == buttons[2][1]) {
             // if(buttons[rows][col] == buttons[2][0] || buttons[rows][col] == buttons[1][1]
@@ -517,17 +516,17 @@ public class SAR2 extends JApplet implements ActionListener {
             if (buttons[2][0].getText().equals(""))
                 buttons[2][0].setBackground(Color.BLUE);
             else
-                buttons[2][0].setBackground(Color.RED);
+                buttons[2][0].setBackground(Color.WHITE);
 
             if (buttons[1][1].getText().equals(""))
                 buttons[1][1].setBackground(Color.BLUE);
             else
-                buttons[1][1].setBackground(Color.RED);
+                buttons[1][1].setBackground(Color.WHITE);
 
             if (buttons[2][2].getText().equals(""))
                 buttons[2][2].setBackground(Color.BLUE);
             else
-                buttons[2][2].setBackground(Color.RED);
+                buttons[2][2].setBackground(Color.WHITE);
 
         } else if (b2 == buttons[2][2]) {
             // if(buttons[rows][col] == buttons[1][2] || buttons[rows][col] == buttons[2][1]
@@ -535,17 +534,17 @@ public class SAR2 extends JApplet implements ActionListener {
             if (buttons[1][2].getText().equals(""))
                 buttons[1][2].setBackground(Color.BLUE);
             else
-                buttons[1][2].setBackground(Color.RED);
+                buttons[1][2].setBackground(Color.WHITE);
 
             if (buttons[2][1].getText().equals(""))
                 buttons[2][1].setBackground(Color.BLUE);
             else
-                buttons[2][1].setBackground(Color.RED);
+                buttons[2][1].setBackground(Color.WHITE);
 
             if (buttons[1][1].getText().equals(""))
                 buttons[1][1].setBackground(Color.BLUE);
             else
-                buttons[1][1].setBackground(Color.RED);
+                buttons[1][1].setBackground(Color.WHITE);
         }
     }
 
@@ -565,9 +564,9 @@ public class SAR2 extends JApplet implements ActionListener {
                             buttons[rows][col].getHeight(), Image.SCALE_SMOOTH);
                     buttons[rows][col].setIcon(new ImageIcon(img));
                 }
-                buttons[0][1].setBackground(Color.RED);
-                buttons[1][1].setBackground(Color.RED);
-                buttons[1][0].setBackground(Color.RED);
+                buttons[0][1].setBackground(Color.WHITE);
+                buttons[1][1].setBackground(Color.WHITE);
+                buttons[1][0].setBackground(Color.WHITE);
             }
         } else if (b2 == buttons[0][1]) {
             if (buttons[rows][col] == buttons[0][0] || buttons[rows][col] == buttons[1][1]
@@ -584,9 +583,9 @@ public class SAR2 extends JApplet implements ActionListener {
                             buttons[rows][col].getHeight(), Image.SCALE_SMOOTH);
                     buttons[rows][col].setIcon(new ImageIcon(img));
                 }
-                buttons[0][0].setBackground(Color.RED);
-                buttons[1][1].setBackground(Color.RED);
-                buttons[0][2].setBackground(Color.RED);
+                buttons[0][0].setBackground(Color.WHITE);
+                buttons[1][1].setBackground(Color.WHITE);
+                buttons[0][2].setBackground(Color.WHITE);
             }
         } else if (b2 == buttons[0][2]) {
             if (buttons[rows][col] == buttons[0][1] || buttons[rows][col] == buttons[1][1]
@@ -603,9 +602,9 @@ public class SAR2 extends JApplet implements ActionListener {
                             buttons[rows][col].getHeight(), Image.SCALE_SMOOTH);
                     buttons[rows][col].setIcon(new ImageIcon(img));
                 }
-                buttons[0][1].setBackground(Color.RED);
-                buttons[1][1].setBackground(Color.RED);
-                buttons[1][2].setBackground(Color.RED);
+                buttons[0][1].setBackground(Color.WHITE);
+                buttons[1][1].setBackground(Color.WHITE);
+                buttons[1][2].setBackground(Color.WHITE);
             }
         } else if (b2 == buttons[1][0]) {
             if (buttons[rows][col] == buttons[0][0] || buttons[rows][col] == buttons[1][1]
@@ -622,9 +621,9 @@ public class SAR2 extends JApplet implements ActionListener {
                             buttons[rows][col].getHeight(), Image.SCALE_SMOOTH);
                     buttons[rows][col].setIcon(new ImageIcon(img));
                 }
-                buttons[0][0].setBackground(Color.RED);
-                buttons[1][1].setBackground(Color.RED);
-                buttons[2][0].setBackground(Color.RED);
+                buttons[0][0].setBackground(Color.WHITE);
+                buttons[1][1].setBackground(Color.WHITE);
+                buttons[2][0].setBackground(Color.WHITE);
             }
         } else if (b2 == buttons[1][1]) {
             if (buttons[rows][col] == buttons[0][0] || buttons[rows][col] == buttons[0][1]
@@ -643,14 +642,14 @@ public class SAR2 extends JApplet implements ActionListener {
                             buttons[rows][col].getHeight(), Image.SCALE_SMOOTH);
                     buttons[rows][col].setIcon(new ImageIcon(img));
                 }
-                buttons[0][0].setBackground(Color.RED);
-                buttons[0][1].setBackground(Color.RED);
-                buttons[0][2].setBackground(Color.RED);
-                buttons[1][0].setBackground(Color.RED);
-                buttons[1][2].setBackground(Color.RED);
-                buttons[2][0].setBackground(Color.RED);
-                buttons[2][1].setBackground(Color.RED);
-                buttons[2][2].setBackground(Color.RED);
+                buttons[0][0].setBackground(Color.WHITE);
+                buttons[0][1].setBackground(Color.WHITE);
+                buttons[0][2].setBackground(Color.WHITE);
+                buttons[1][0].setBackground(Color.WHITE);
+                buttons[1][2].setBackground(Color.WHITE);
+                buttons[2][0].setBackground(Color.WHITE);
+                buttons[2][1].setBackground(Color.WHITE);
+                buttons[2][2].setBackground(Color.WHITE);
 
             }
         } else if (b2 == buttons[1][2]) {
@@ -668,9 +667,9 @@ public class SAR2 extends JApplet implements ActionListener {
                             buttons[rows][col].getHeight(), Image.SCALE_SMOOTH);
                     buttons[rows][col].setIcon(new ImageIcon(img));
                 }
-                buttons[0][2].setBackground(Color.RED);
-                buttons[1][1].setBackground(Color.RED);
-                buttons[2][2].setBackground(Color.RED);
+                buttons[0][2].setBackground(Color.WHITE);
+                buttons[1][1].setBackground(Color.WHITE);
+                buttons[2][2].setBackground(Color.WHITE);
             }
         } else if (b2 == buttons[2][0]) {
             if (buttons[rows][col] == buttons[1][0] || buttons[rows][col] == buttons[1][1]
@@ -687,9 +686,9 @@ public class SAR2 extends JApplet implements ActionListener {
                             buttons[rows][col].getHeight(), Image.SCALE_SMOOTH);
                     buttons[rows][col].setIcon(new ImageIcon(img));
                 }
-                buttons[1][0].setBackground(Color.RED);
-                buttons[1][1].setBackground(Color.RED);
-                buttons[2][1].setBackground(Color.RED);
+                buttons[1][0].setBackground(Color.WHITE);
+                buttons[1][1].setBackground(Color.WHITE);
+                buttons[2][1].setBackground(Color.WHITE);
             }
         } else if (b2 == buttons[2][1]) {
             if (buttons[rows][col] == buttons[2][0] || buttons[rows][col] == buttons[1][1]
@@ -706,9 +705,9 @@ public class SAR2 extends JApplet implements ActionListener {
                             buttons[rows][col].getHeight(), Image.SCALE_SMOOTH);
                     buttons[rows][col].setIcon(new ImageIcon(img));
                 }
-                buttons[2][0].setBackground(Color.RED);
-                buttons[1][1].setBackground(Color.RED);
-                buttons[2][2].setBackground(Color.RED);
+                buttons[2][0].setBackground(Color.WHITE);
+                buttons[1][1].setBackground(Color.WHITE);
+                buttons[2][2].setBackground(Color.WHITE);
             }
         } else if (b2 == buttons[2][2]) {
             if (buttons[rows][col] == buttons[1][2] || buttons[rows][col] == buttons[2][1]
@@ -726,9 +725,9 @@ public class SAR2 extends JApplet implements ActionListener {
                             buttons[rows][col].getHeight(), Image.SCALE_SMOOTH);
                     buttons[rows][col].setIcon(new ImageIcon(img));
                 }
-                buttons[1][2].setBackground(Color.RED);
-                buttons[2][1].setBackground(Color.RED);
-                buttons[1][1].setBackground(Color.RED);
+                buttons[1][2].setBackground(Color.WHITE);
+                buttons[2][1].setBackground(Color.WHITE);
+                buttons[1][1].setBackground(Color.WHITE);
             }
         }
 

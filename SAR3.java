@@ -3,9 +3,8 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.JOptionPane;
 
-public class Trio extends JApplet implements ActionListener {
+public class SAR3 extends JApplet implements ActionListener {
 
-    // private Jthis this;
     private JButton[][] buttons;
     private JLabel statusLabel;
     private JLabel top;
@@ -15,15 +14,20 @@ public class Trio extends JApplet implements ActionListener {
     private ImageIcon icon1;
     private ImageIcon icon2;
     private Image img;
+    private JDialog dialog;
+    private JOptionPane optionPane;
 
-    public Trio() {
+    public SAR3() {
         // this = new Jthis("Tic Tac Toe");
         buttons = new JButton[3][3];
         statusLabel = new JLabel();
         top = new JLabel();
-        icon1 = new ImageIcon("red.jpg");
-        icon2 = new ImageIcon("blue.jpg");
+        icon1 = new ImageIcon("red.jpeg");
+        icon2 = new ImageIcon("blue.png");
         character = 'X';
+        Dimension dimesion = new Dimension(500, 500);
+        optionPane = new JOptionPane();
+        optionPane.setPreferredSize(dimesion);
         initializeGUI();
     }
 
@@ -40,7 +44,7 @@ public class Trio extends JApplet implements ActionListener {
         }
         for (int rows = 0; rows < 3; rows++) {
             for (int col = 0; col < 3; col++) {
-                buttons[rows][col].setBackground(Color.WHITE);
+                buttons[rows][col].setBackground(Color.LIGHT_GRAY);
             }
         }
         statusLabel.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 16));
@@ -80,9 +84,9 @@ public class Trio extends JApplet implements ActionListener {
                     !buttons[rows][0].getText().equals("")) {
                 endGame(buttons[rows][0].getText() + " wins!");
                 if (character == 'X')
-                    JOptionPane.showMessageDialog(this, "Player 1 won the match");
+                    optionPane.showMessageDialog(this, "Player 1 won the match");
                 else
-                    JOptionPane.showMessageDialog(this, "Player 2 won the match");
+                    optionPane.showMessageDialog(this, "Player 2 won the match");
                 return;
             }
         }
@@ -93,9 +97,9 @@ public class Trio extends JApplet implements ActionListener {
                     !buttons[0][col].getText().equals("")) {
                 endGame(buttons[0][col].getText() + " wins!");
                 if (character == 'X')
-                    JOptionPane.showMessageDialog(this, "Player 1 won the match");
+                    optionPane.showMessageDialog(this, "Player 1 won the match");
                 else
-                    JOptionPane.showMessageDialog(this, "Player 2 won the match");
+                    optionPane.showMessageDialog(this, "Player 2 won the match");
 
                 return;
             }
@@ -106,9 +110,9 @@ public class Trio extends JApplet implements ActionListener {
                 !buttons[0][0].getText().equals("")) {
             endGame(buttons[0][0].getText() + " wins!");
             if (character == 'X')
-                JOptionPane.showMessageDialog(this, "Player 1 won the match");
+                optionPane.showMessageDialog(this, "Player 1 won the match");
             else
-                JOptionPane.showMessageDialog(this, "Player 2 won the match");
+                optionPane.showMessageDialog(this, "Player 2 won the match");
 
             return;
         }
@@ -117,9 +121,9 @@ public class Trio extends JApplet implements ActionListener {
                 !buttons[0][2].getText().equals("")) {
             endGame(buttons[0][2].getText() + " wins!");
             if (character == 'X')
-                JOptionPane.showMessageDialog(this, "Player 1 won the match");
+                optionPane.showMessageDialog(this, "Player 1 won the match");
             else
-                JOptionPane.showMessageDialog(this, "Player 2 won the match");
+                optionPane.showMessageDialog(this, "Player 2 won the match");
 
             return;
         }
@@ -216,9 +220,9 @@ public class Trio extends JApplet implements ActionListener {
                     || buttons[rows][col] == buttons[1][0]) && (buttons[rows][col].getText().equals(""))) {
                 return 1;
             } else {
-                buttons[0][1].setBackground(Color.WHITE);
-                buttons[1][1].setBackground(Color.WHITE);
-                buttons[1][0].setBackground(Color.WHITE);
+                buttons[0][1].setBackground(Color.LIGHT_GRAY);
+                buttons[1][1].setBackground(Color.LIGHT_GRAY);
+                buttons[1][0].setBackground(Color.LIGHT_GRAY);
 
             }
         } else if (b2 == buttons[0][1]) {
@@ -226,18 +230,18 @@ public class Trio extends JApplet implements ActionListener {
                     || buttons[rows][col] == buttons[0][2]) && (buttons[rows][col].getText().equals(""))) {
                 return 1;
             } else {
-                buttons[0][0].setBackground(Color.WHITE);
-                buttons[1][1].setBackground(Color.WHITE);
-                buttons[0][2].setBackground(Color.WHITE);
+                buttons[0][0].setBackground(Color.LIGHT_GRAY);
+                buttons[1][1].setBackground(Color.LIGHT_GRAY);
+                buttons[0][2].setBackground(Color.LIGHT_GRAY);
             }
         } else if (b2 == buttons[0][2]) {
             if ((buttons[rows][col] == buttons[0][1] || buttons[rows][col] == buttons[1][1]
                     || buttons[rows][col] == buttons[1][2]) && (buttons[rows][col].getText().equals(""))) {
                 return 1;
             } else {
-                buttons[0][1].setBackground(Color.WHITE);
-                buttons[1][1].setBackground(Color.WHITE);
-                buttons[1][2].setBackground(Color.WHITE);
+                buttons[0][1].setBackground(Color.LIGHT_GRAY);
+                buttons[1][1].setBackground(Color.LIGHT_GRAY);
+                buttons[1][2].setBackground(Color.LIGHT_GRAY);
 
             }
         } else if (b2 == buttons[1][0]) {
@@ -245,9 +249,9 @@ public class Trio extends JApplet implements ActionListener {
                     || buttons[rows][col] == buttons[2][0]) && (buttons[rows][col].getText().equals(""))) {
                 return 1;
             } else {
-                buttons[0][0].setBackground(Color.WHITE);
-                buttons[1][1].setBackground(Color.WHITE);
-                buttons[2][0].setBackground(Color.WHITE);
+                buttons[0][0].setBackground(Color.LIGHT_GRAY);
+                buttons[1][1].setBackground(Color.LIGHT_GRAY);
+                buttons[2][0].setBackground(Color.LIGHT_GRAY);
             }
         } else if (b2 == buttons[1][1]) {
             if ((buttons[rows][col] == buttons[0][0] || buttons[rows][col] == buttons[0][1]
@@ -257,14 +261,14 @@ public class Trio extends JApplet implements ActionListener {
                     && (buttons[rows][col].getText().equals(""))) {
                 return 1;
             } else {
-                buttons[0][0].setBackground(Color.WHITE);
-                buttons[0][1].setBackground(Color.WHITE);
-                buttons[0][2].setBackground(Color.WHITE);
-                buttons[1][0].setBackground(Color.WHITE);
-                buttons[1][2].setBackground(Color.WHITE);
-                buttons[2][0].setBackground(Color.WHITE);
-                buttons[2][1].setBackground(Color.WHITE);
-                buttons[2][2].setBackground(Color.WHITE);
+                buttons[0][0].setBackground(Color.LIGHT_GRAY);
+                buttons[0][1].setBackground(Color.LIGHT_GRAY);
+                buttons[0][2].setBackground(Color.LIGHT_GRAY);
+                buttons[1][0].setBackground(Color.LIGHT_GRAY);
+                buttons[1][2].setBackground(Color.LIGHT_GRAY);
+                buttons[2][0].setBackground(Color.LIGHT_GRAY);
+                buttons[2][1].setBackground(Color.LIGHT_GRAY);
+                buttons[2][2].setBackground(Color.LIGHT_GRAY);
 
             }
         } else if (b2 == buttons[1][2]) {
@@ -272,9 +276,9 @@ public class Trio extends JApplet implements ActionListener {
                     || buttons[rows][col] == buttons[2][2]) && (buttons[rows][col].getText().equals(""))) {
                 return 1;
             } else {
-                buttons[0][2].setBackground(Color.WHITE);
-                buttons[1][1].setBackground(Color.WHITE);
-                buttons[2][2].setBackground(Color.WHITE);
+                buttons[0][2].setBackground(Color.LIGHT_GRAY);
+                buttons[1][1].setBackground(Color.LIGHT_GRAY);
+                buttons[2][2].setBackground(Color.LIGHT_GRAY);
 
             }
         } else if (b2 == buttons[2][0]) {
@@ -282,9 +286,9 @@ public class Trio extends JApplet implements ActionListener {
                     || buttons[rows][col] == buttons[2][1]) && (buttons[rows][col].getText().equals(""))) {
                 return 1;
             } else {
-                buttons[1][0].setBackground(Color.WHITE);
-                buttons[1][1].setBackground(Color.WHITE);
-                buttons[2][1].setBackground(Color.WHITE);
+                buttons[1][0].setBackground(Color.LIGHT_GRAY);
+                buttons[1][1].setBackground(Color.LIGHT_GRAY);
+                buttons[2][1].setBackground(Color.LIGHT_GRAY);
             }
         } else if (b2 == buttons[2][1]) {
             if ((buttons[rows][col] == buttons[2][0] || buttons[rows][col] == buttons[1][1]
@@ -292,18 +296,18 @@ public class Trio extends JApplet implements ActionListener {
                 return 1;
             } else {
 
-                buttons[2][0].setBackground(Color.WHITE);
-                buttons[1][1].setBackground(Color.WHITE);
-                buttons[2][2].setBackground(Color.WHITE);
+                buttons[2][0].setBackground(Color.LIGHT_GRAY);
+                buttons[1][1].setBackground(Color.LIGHT_GRAY);
+                buttons[2][2].setBackground(Color.LIGHT_GRAY);
             }
         } else if (b2 == buttons[2][2]) {
             if ((buttons[rows][col] == buttons[1][2] || buttons[rows][col] == buttons[2][1]
                     || buttons[rows][col] == buttons[1][1]) && (buttons[rows][col].getText().equals(""))) {
                 return 1;
             } else {
-                buttons[1][2].setBackground(Color.WHITE);
-                buttons[2][1].setBackground(Color.WHITE);
-                buttons[1][1].setBackground(Color.WHITE);
+                buttons[1][2].setBackground(Color.LIGHT_GRAY);
+                buttons[2][1].setBackground(Color.LIGHT_GRAY);
+                buttons[1][1].setBackground(Color.LIGHT_GRAY);
             }
         }
         return 0;
@@ -362,49 +366,49 @@ public class Trio extends JApplet implements ActionListener {
             if (buttons[0][1].getText().equals(""))
                 buttons[0][1].setBackground(Color.BLUE);
             else
-                buttons[0][1].setBackground(Color.WHITE);
+                buttons[0][1].setBackground(Color.LIGHT_GRAY);
 
             if (buttons[1][1].getText().equals(""))
                 buttons[1][1].setBackground(Color.BLUE);
             else
-                buttons[1][1].setBackground(Color.WHITE);
+                buttons[1][1].setBackground(Color.LIGHT_GRAY);
 
             if (buttons[1][0].getText().equals(""))
                 buttons[1][0].setBackground(Color.BLUE);
             else
-                buttons[1][0].setBackground(Color.WHITE);
+                buttons[1][0].setBackground(Color.LIGHT_GRAY);
 
         } else if (b2 == buttons[0][1]) {
             if (buttons[0][0].getText().equals(""))
                 buttons[0][0].setBackground(Color.BLUE);
             else
-                buttons[0][0].setBackground(Color.WHITE);
+                buttons[0][0].setBackground(Color.LIGHT_GRAY);
 
             if (buttons[1][1].getText().equals(""))
                 buttons[1][1].setBackground(Color.BLUE);
             else
-                buttons[1][1].setBackground(Color.WHITE);
+                buttons[1][1].setBackground(Color.LIGHT_GRAY);
 
             if (buttons[0][2].getText().equals(""))
                 buttons[0][2].setBackground(Color.BLUE);
             else
-                buttons[0][2].setBackground(Color.WHITE);
+                buttons[0][2].setBackground(Color.LIGHT_GRAY);
 
         } else if (b2 == buttons[0][2]) {
             if (buttons[0][1].getText().equals(""))
                 buttons[0][1].setBackground(Color.BLUE);
             else
-                buttons[0][1].setBackground(Color.WHITE);
+                buttons[0][1].setBackground(Color.LIGHT_GRAY);
 
             if (buttons[1][1].getText().equals(""))
                 buttons[1][1].setBackground(Color.BLUE);
             else
-                buttons[1][1].setBackground(Color.WHITE);
+                buttons[1][1].setBackground(Color.LIGHT_GRAY);
 
             if (buttons[1][2].getText().equals(""))
                 buttons[1][2].setBackground(Color.BLUE);
             else
-                buttons[1][2].setBackground(Color.WHITE);
+                buttons[1][2].setBackground(Color.LIGHT_GRAY);
 
         } else if (b2 == buttons[1][0]) {
             // if(buttons[rows][col] == buttons[0][0] || buttons[rows][col] == buttons[1][1]
@@ -412,17 +416,17 @@ public class Trio extends JApplet implements ActionListener {
             if (buttons[0][0].getText().equals(""))
                 buttons[0][0].setBackground(Color.BLUE);
             else
-                buttons[0][0].setBackground(Color.WHITE);
+                buttons[0][0].setBackground(Color.LIGHT_GRAY);
 
             if (buttons[1][1].getText().equals(""))
                 buttons[1][1].setBackground(Color.BLUE);
             else
-                buttons[1][1].setBackground(Color.WHITE);
+                buttons[1][1].setBackground(Color.LIGHT_GRAY);
 
             if (buttons[2][0].getText().equals(""))
                 buttons[2][0].setBackground(Color.BLUE);
             else
-                buttons[2][0].setBackground(Color.WHITE);
+                buttons[2][0].setBackground(Color.LIGHT_GRAY);
 
         } else if (b2 == buttons[1][1]) {
             // if(buttons[rows][col] == buttons[0][0] || buttons[rows][col] == buttons[0][1]
@@ -433,42 +437,42 @@ public class Trio extends JApplet implements ActionListener {
             if (buttons[0][0].getText().equals(""))
                 buttons[0][0].setBackground(Color.BLUE);
             else
-                buttons[0][0].setBackground(Color.WHITE);
+                buttons[0][0].setBackground(Color.LIGHT_GRAY);
 
             if (buttons[0][1].getText().equals(""))
                 buttons[0][1].setBackground(Color.BLUE);
             else
-                buttons[0][1].setBackground(Color.WHITE);
+                buttons[0][1].setBackground(Color.LIGHT_GRAY);
 
             if (buttons[0][2].getText().equals(""))
                 buttons[0][2].setBackground(Color.BLUE);
             else
-                buttons[0][2].setBackground(Color.WHITE);
+                buttons[0][2].setBackground(Color.LIGHT_GRAY);
 
             if (buttons[1][0].getText().equals(""))
                 buttons[1][0].setBackground(Color.BLUE);
             else
-                buttons[1][0].setBackground(Color.WHITE);
+                buttons[1][0].setBackground(Color.LIGHT_GRAY);
 
             if (buttons[1][2].getText().equals(""))
                 buttons[1][2].setBackground(Color.BLUE);
             else
-                buttons[1][2].setBackground(Color.WHITE);
+                buttons[1][2].setBackground(Color.LIGHT_GRAY);
 
             if (buttons[2][0].getText().equals(""))
                 buttons[2][0].setBackground(Color.BLUE);
             else
-                buttons[2][0].setBackground(Color.WHITE);
+                buttons[2][0].setBackground(Color.LIGHT_GRAY);
 
             if (buttons[2][1].getText().equals(""))
                 buttons[2][1].setBackground(Color.BLUE);
             else
-                buttons[2][1].setBackground(Color.WHITE);
+                buttons[2][1].setBackground(Color.LIGHT_GRAY);
 
             if (buttons[2][2].getText().equals(""))
                 buttons[2][2].setBackground(Color.BLUE);
             else
-                buttons[2][2].setBackground(Color.WHITE);
+                buttons[2][2].setBackground(Color.LIGHT_GRAY);
 
         } else if (b2 == buttons[1][2]) {
             // if(buttons[rows][col] == buttons[0][2] || buttons[rows][col] == buttons[1][1]
@@ -476,17 +480,17 @@ public class Trio extends JApplet implements ActionListener {
             if (buttons[0][2].getText().equals(""))
                 buttons[0][2].setBackground(Color.BLUE);
             else
-                buttons[0][2].setBackground(Color.WHITE);
+                buttons[0][2].setBackground(Color.LIGHT_GRAY);
 
             if (buttons[1][1].getText().equals(""))
                 buttons[1][1].setBackground(Color.BLUE);
             else
-                buttons[1][1].setBackground(Color.WHITE);
+                buttons[1][1].setBackground(Color.LIGHT_GRAY);
 
             if (buttons[2][2].getText().equals(""))
                 buttons[2][2].setBackground(Color.BLUE);
             else
-                buttons[2][2].setBackground(Color.WHITE);
+                buttons[2][2].setBackground(Color.LIGHT_GRAY);
 
         } else if (b2 == buttons[2][0]) {
             // if(buttons[rows][col] == buttons[1][0] || buttons[rows][col] == buttons[1][1]
@@ -494,17 +498,17 @@ public class Trio extends JApplet implements ActionListener {
             if (buttons[1][0].getText().equals(""))
                 buttons[1][0].setBackground(Color.BLUE);
             else
-                buttons[1][0].setBackground(Color.WHITE);
+                buttons[1][0].setBackground(Color.LIGHT_GRAY);
 
             if (buttons[1][1].getText().equals(""))
                 buttons[1][1].setBackground(Color.BLUE);
             else
-                buttons[1][1].setBackground(Color.WHITE);
+                buttons[1][1].setBackground(Color.LIGHT_GRAY);
 
             if (buttons[2][1].getText().equals(""))
                 buttons[2][1].setBackground(Color.BLUE);
             else
-                buttons[2][1].setBackground(Color.WHITE);
+                buttons[2][1].setBackground(Color.LIGHT_GRAY);
 
         } else if (b2 == buttons[2][1]) {
             // if(buttons[rows][col] == buttons[2][0] || buttons[rows][col] == buttons[1][1]
@@ -512,17 +516,17 @@ public class Trio extends JApplet implements ActionListener {
             if (buttons[2][0].getText().equals(""))
                 buttons[2][0].setBackground(Color.BLUE);
             else
-                buttons[2][0].setBackground(Color.WHITE);
+                buttons[2][0].setBackground(Color.LIGHT_GRAY);
 
             if (buttons[1][1].getText().equals(""))
                 buttons[1][1].setBackground(Color.BLUE);
             else
-                buttons[1][1].setBackground(Color.WHITE);
+                buttons[1][1].setBackground(Color.LIGHT_GRAY);
 
             if (buttons[2][2].getText().equals(""))
                 buttons[2][2].setBackground(Color.BLUE);
             else
-                buttons[2][2].setBackground(Color.WHITE);
+                buttons[2][2].setBackground(Color.LIGHT_GRAY);
 
         } else if (b2 == buttons[2][2]) {
             // if(buttons[rows][col] == buttons[1][2] || buttons[rows][col] == buttons[2][1]
@@ -530,17 +534,17 @@ public class Trio extends JApplet implements ActionListener {
             if (buttons[1][2].getText().equals(""))
                 buttons[1][2].setBackground(Color.BLUE);
             else
-                buttons[1][2].setBackground(Color.WHITE);
+                buttons[1][2].setBackground(Color.LIGHT_GRAY);
 
             if (buttons[2][1].getText().equals(""))
                 buttons[2][1].setBackground(Color.BLUE);
             else
-                buttons[2][1].setBackground(Color.WHITE);
+                buttons[2][1].setBackground(Color.LIGHT_GRAY);
 
             if (buttons[1][1].getText().equals(""))
                 buttons[1][1].setBackground(Color.BLUE);
             else
-                buttons[1][1].setBackground(Color.WHITE);
+                buttons[1][1].setBackground(Color.LIGHT_GRAY);
         }
     }
 
@@ -560,9 +564,9 @@ public class Trio extends JApplet implements ActionListener {
                             buttons[rows][col].getHeight(), Image.SCALE_SMOOTH);
                     buttons[rows][col].setIcon(new ImageIcon(img));
                 }
-                buttons[0][1].setBackground(Color.WHITE);
-                buttons[1][1].setBackground(Color.WHITE);
-                buttons[1][0].setBackground(Color.WHITE);
+                buttons[0][1].setBackground(Color.LIGHT_GRAY);
+                buttons[1][1].setBackground(Color.LIGHT_GRAY);
+                buttons[1][0].setBackground(Color.LIGHT_GRAY);
             }
         } else if (b2 == buttons[0][1]) {
             if (buttons[rows][col] == buttons[0][0] || buttons[rows][col] == buttons[1][1]
@@ -579,9 +583,9 @@ public class Trio extends JApplet implements ActionListener {
                             buttons[rows][col].getHeight(), Image.SCALE_SMOOTH);
                     buttons[rows][col].setIcon(new ImageIcon(img));
                 }
-                buttons[0][0].setBackground(Color.WHITE);
-                buttons[1][1].setBackground(Color.WHITE);
-                buttons[0][2].setBackground(Color.WHITE);
+                buttons[0][0].setBackground(Color.LIGHT_GRAY);
+                buttons[1][1].setBackground(Color.LIGHT_GRAY);
+                buttons[0][2].setBackground(Color.LIGHT_GRAY);
             }
         } else if (b2 == buttons[0][2]) {
             if (buttons[rows][col] == buttons[0][1] || buttons[rows][col] == buttons[1][1]
@@ -598,9 +602,9 @@ public class Trio extends JApplet implements ActionListener {
                             buttons[rows][col].getHeight(), Image.SCALE_SMOOTH);
                     buttons[rows][col].setIcon(new ImageIcon(img));
                 }
-                buttons[0][1].setBackground(Color.WHITE);
-                buttons[1][1].setBackground(Color.WHITE);
-                buttons[1][2].setBackground(Color.WHITE);
+                buttons[0][1].setBackground(Color.LIGHT_GRAY);
+                buttons[1][1].setBackground(Color.LIGHT_GRAY);
+                buttons[1][2].setBackground(Color.LIGHT_GRAY);
             }
         } else if (b2 == buttons[1][0]) {
             if (buttons[rows][col] == buttons[0][0] || buttons[rows][col] == buttons[1][1]
@@ -617,9 +621,9 @@ public class Trio extends JApplet implements ActionListener {
                             buttons[rows][col].getHeight(), Image.SCALE_SMOOTH);
                     buttons[rows][col].setIcon(new ImageIcon(img));
                 }
-                buttons[0][0].setBackground(Color.WHITE);
-                buttons[1][1].setBackground(Color.WHITE);
-                buttons[2][0].setBackground(Color.WHITE);
+                buttons[0][0].setBackground(Color.LIGHT_GRAY);
+                buttons[1][1].setBackground(Color.LIGHT_GRAY);
+                buttons[2][0].setBackground(Color.LIGHT_GRAY);
             }
         } else if (b2 == buttons[1][1]) {
             if (buttons[rows][col] == buttons[0][0] || buttons[rows][col] == buttons[0][1]
@@ -638,14 +642,14 @@ public class Trio extends JApplet implements ActionListener {
                             buttons[rows][col].getHeight(), Image.SCALE_SMOOTH);
                     buttons[rows][col].setIcon(new ImageIcon(img));
                 }
-                buttons[0][0].setBackground(Color.WHITE);
-                buttons[0][1].setBackground(Color.WHITE);
-                buttons[0][2].setBackground(Color.WHITE);
-                buttons[1][0].setBackground(Color.WHITE);
-                buttons[1][2].setBackground(Color.WHITE);
-                buttons[2][0].setBackground(Color.WHITE);
-                buttons[2][1].setBackground(Color.WHITE);
-                buttons[2][2].setBackground(Color.WHITE);
+                buttons[0][0].setBackground(Color.LIGHT_GRAY);
+                buttons[0][1].setBackground(Color.LIGHT_GRAY);
+                buttons[0][2].setBackground(Color.LIGHT_GRAY);
+                buttons[1][0].setBackground(Color.LIGHT_GRAY);
+                buttons[1][2].setBackground(Color.LIGHT_GRAY);
+                buttons[2][0].setBackground(Color.LIGHT_GRAY);
+                buttons[2][1].setBackground(Color.LIGHT_GRAY);
+                buttons[2][2].setBackground(Color.LIGHT_GRAY);
 
             }
         } else if (b2 == buttons[1][2]) {
@@ -663,9 +667,9 @@ public class Trio extends JApplet implements ActionListener {
                             buttons[rows][col].getHeight(), Image.SCALE_SMOOTH);
                     buttons[rows][col].setIcon(new ImageIcon(img));
                 }
-                buttons[0][2].setBackground(Color.WHITE);
-                buttons[1][1].setBackground(Color.WHITE);
-                buttons[2][2].setBackground(Color.WHITE);
+                buttons[0][2].setBackground(Color.LIGHT_GRAY);
+                buttons[1][1].setBackground(Color.LIGHT_GRAY);
+                buttons[2][2].setBackground(Color.LIGHT_GRAY);
             }
         } else if (b2 == buttons[2][0]) {
             if (buttons[rows][col] == buttons[1][0] || buttons[rows][col] == buttons[1][1]
@@ -682,9 +686,9 @@ public class Trio extends JApplet implements ActionListener {
                             buttons[rows][col].getHeight(), Image.SCALE_SMOOTH);
                     buttons[rows][col].setIcon(new ImageIcon(img));
                 }
-                buttons[1][0].setBackground(Color.WHITE);
-                buttons[1][1].setBackground(Color.WHITE);
-                buttons[2][1].setBackground(Color.WHITE);
+                buttons[1][0].setBackground(Color.LIGHT_GRAY);
+                buttons[1][1].setBackground(Color.LIGHT_GRAY);
+                buttons[2][1].setBackground(Color.LIGHT_GRAY);
             }
         } else if (b2 == buttons[2][1]) {
             if (buttons[rows][col] == buttons[2][0] || buttons[rows][col] == buttons[1][1]
@@ -701,9 +705,9 @@ public class Trio extends JApplet implements ActionListener {
                             buttons[rows][col].getHeight(), Image.SCALE_SMOOTH);
                     buttons[rows][col].setIcon(new ImageIcon(img));
                 }
-                buttons[2][0].setBackground(Color.WHITE);
-                buttons[1][1].setBackground(Color.WHITE);
-                buttons[2][2].setBackground(Color.WHITE);
+                buttons[2][0].setBackground(Color.LIGHT_GRAY);
+                buttons[1][1].setBackground(Color.LIGHT_GRAY);
+                buttons[2][2].setBackground(Color.LIGHT_GRAY);
             }
         } else if (b2 == buttons[2][2]) {
             if (buttons[rows][col] == buttons[1][2] || buttons[rows][col] == buttons[2][1]
@@ -721,9 +725,9 @@ public class Trio extends JApplet implements ActionListener {
                             buttons[rows][col].getHeight(), Image.SCALE_SMOOTH);
                     buttons[rows][col].setIcon(new ImageIcon(img));
                 }
-                buttons[1][2].setBackground(Color.WHITE);
-                buttons[2][1].setBackground(Color.WHITE);
-                buttons[1][1].setBackground(Color.WHITE);
+                buttons[1][2].setBackground(Color.LIGHT_GRAY);
+                buttons[2][1].setBackground(Color.LIGHT_GRAY);
+                buttons[1][1].setBackground(Color.LIGHT_GRAY);
             }
         }
 
@@ -733,7 +737,11 @@ public class Trio extends JApplet implements ActionListener {
     }
 
     public static void main(String[] args) {
-        new Trio();
+        new SAR3();
 
     }
 }
+/*
+ * <applet code="SAR3" width=300 height=100>
+ * </applet>
+ */

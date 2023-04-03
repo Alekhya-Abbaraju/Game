@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.JOptionPane;
 
-public class Trio extends JApplet implements ActionListener {
+public class Rab extends JApplet implements ActionListener {
 
     // private Jthis this;
     private JButton[][] buttons;
@@ -15,8 +15,9 @@ public class Trio extends JApplet implements ActionListener {
     private ImageIcon icon1;
     private ImageIcon icon2;
     private Image img;
+    private JOptionPane optionPane;
 
-    public Trio() {
+    public Rab() {
         // this = new Jthis("Tic Tac Toe");
         buttons = new JButton[3][3];
         statusLabel = new JLabel();
@@ -24,6 +25,9 @@ public class Trio extends JApplet implements ActionListener {
         icon1 = new ImageIcon("red.jpg");
         icon2 = new ImageIcon("blue.jpg");
         character = 'X';
+        Dimension dimesion = new Dimension(500, 500);
+        optionPane = new JOptionPane();
+        optionPane.setPreferredSize(dimesion);
         initializeGUI();
     }
 
@@ -33,7 +37,7 @@ public class Trio extends JApplet implements ActionListener {
             for (int col = 0; col < 3; col++) {
                 JButton button = new JButton("");
                 button.addActionListener(this);
-                button.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 64));
+                button.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
                 buttons[rows][col] = button;
                 panel.add(button);
             }
@@ -80,9 +84,9 @@ public class Trio extends JApplet implements ActionListener {
                     !buttons[rows][0].getText().equals("")) {
                 endGame(buttons[rows][0].getText() + " wins!");
                 if (character == 'X')
-                    JOptionPane.showMessageDialog(this, "Player 1 won the match");
+                    optionPane.showMessageDialog(this, "Player 1 won the match");
                 else
-                    JOptionPane.showMessageDialog(this, "Player 2 won the match");
+                    optionPane.showMessageDialog(this, "Player 2 won the match");
                 return;
             }
         }
@@ -93,9 +97,9 @@ public class Trio extends JApplet implements ActionListener {
                     !buttons[0][col].getText().equals("")) {
                 endGame(buttons[0][col].getText() + " wins!");
                 if (character == 'X')
-                    JOptionPane.showMessageDialog(this, "Player 1 won the match");
+                    optionPane.showMessageDialog(this, "Player 1 won the match");
                 else
-                    JOptionPane.showMessageDialog(this, "Player 2 won the match");
+                    optionPane.showMessageDialog(this, "Player 2 won the match");
 
                 return;
             }
@@ -106,9 +110,9 @@ public class Trio extends JApplet implements ActionListener {
                 !buttons[0][0].getText().equals("")) {
             endGame(buttons[0][0].getText() + " wins!");
             if (character == 'X')
-                JOptionPane.showMessageDialog(this, "Player 1 won the match");
+                optionPane.showMessageDialog(this, "Player 1 won the match");
             else
-                JOptionPane.showMessageDialog(this, "Player 2 won the match");
+                optionPane.showMessageDialog(this, "Player 2 won the match");
 
             return;
         }
@@ -117,9 +121,9 @@ public class Trio extends JApplet implements ActionListener {
                 !buttons[0][2].getText().equals("")) {
             endGame(buttons[0][2].getText() + " wins!");
             if (character == 'X')
-                JOptionPane.showMessageDialog(this, "Player 1 won the match");
+                optionPane.showMessageDialog(this, "Player 1 won the match");
             else
-                JOptionPane.showMessageDialog(this, "Player 2 won the match");
+                optionPane.showMessageDialog(this, "Player 2 won the match");
 
             return;
         }
@@ -733,7 +737,11 @@ public class Trio extends JApplet implements ActionListener {
     }
 
     public static void main(String[] args) {
-        new Trio();
+        new Rab();
 
     }
 }
+/*
+<applet code="Rab" width=300 height=100>
+</applet>
+*/
