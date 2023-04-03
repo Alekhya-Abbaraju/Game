@@ -38,7 +38,7 @@ public class SAR2 extends JApplet implements ActionListener {
             for (int col = 0; col < 3; col++) {
                 JButton button = new JButton("");
                 button.addActionListener(this);
-                button.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 10));
+                button.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 64));
                 buttons[rows][col] = button;
                 panel.add(button);
             }
